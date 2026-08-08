@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>CANVAS DRAWING</title>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="400" height="400" style="border:2px solid black">
+
+        </canvas>
+        <script>
+            var canvas=document.getElementById("mycanvas");
+            var ctx=canvas.getContext("2d");
+        //draw the sky rectangle
+            ctx.beginPath();//bamsek el pen 
+            ctx.rect(40,40,260,120);
+            var skygardient=ctx.createLinearGradient(0,40,0,150)
+            skygardient.addColorStop(0,"blue");
+            skygardient.addColorStop(1,"white");
+            ctx.fillStyle = skygardient;
+            ctx.fill();
+
+        //grass
+        var grass = ctx.createLinearGradient(0, 140, 0, 320);
+        grass.addColorStop(0, "green");
+        grass.addColorStop(1, "white");
+
+        ctx.fillStyle = grass;
+        ctx.fillRect(40, 140, 260, 120);
+
+        //black lines
+
+        ctx.beginPath();
+
+        ctx.moveTo(120, 170); // leftybd2
+        ctx.lineTo(120, 110); // left y5as
+
+        ctx.lineTo(210, 110); // top horizontal line
+
+        ctx.lineTo(210, 170); // right line end
+
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        </script>
+
+    </body>
+</html>

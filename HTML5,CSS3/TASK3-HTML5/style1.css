@@ -1,0 +1,23 @@
+form{
+    width: 400px;
+    border: 2px soild darkgrey;
+    padding: 15px;
+}
+input:required{
+    border: 2px solid orange;
+}
+input:valid{
+    border: 2px solid green;
+}
+input:invalid{
+    border: 2px solid red;
+}
+.note{
+    visibility: hidden;
+    font-size: 12px;
+    color: gray;
+
+}
+input:invalid + .note{
+    visibility: visible;
+}
