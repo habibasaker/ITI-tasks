@@ -1,0 +1,91 @@
+html{
+    font-size:16px;
+}
+
+body{
+    margin:0;
+    background-color:white;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding-top:30px;
+}
+
+h1{
+    color:black;
+    font-size:50px;
+
+}
+/*el line 2l been task 1 w el links */
+hr{
+    margin:20px 0;
+}
+
+nav{
+    display:flex;/* de 7aga bt5ali kol el gowa el paarent el howa el body yb2a gamb b3ed*/
+    justify-content:space-around;/* space arround de bt2sem 3ala ymen w shmal w el yb2a fe el nos */
+    background-color:gray;
+    padding:10px 0;
+    margin-bottom:10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:black;
+    font-size:25px;
+}
+
+nav a:hover{
+    color:blue;
+}
+
+.features{
+    display:flex;
+    gap:10px;
+}
+
+.feature{
+    flex:1;   /* de el 7aga el ht5ali el 2 box same width mn8eer width declare*/              
+    border:2px solid black;
+    display:flex;
+    flex-direction:column;
+    background-color:white;
+}
+
+.content{
+    flex:1;
+    padding:15px;
+    text-align:center;
+}
+
+.footer{
+    background-color:white;
+    text-align:center;
+    padding:8px;
+}
+/* bn3mel el 5at el pink el t7t*/
+.page-footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:35px;
+    background-color:plum;
+}
+/*low 8yrna el m2as */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    .features{
+        flex-direction:column;
+    }
+}

@@ -1,0 +1,773 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" /><!--el unicode-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- el responsive wep 3shan lama as8er-->
+    <!-- Website created by Mads Kjaer - www.madskjaer.dk -->
+    <link rel="stylesheet" type="text/css" href="style.css" /><!--hena el link bta3 el css w fe 7aga zwedha asmha type da no3 l el css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"><!--hena el link bta3 el bootstrap  -->
+
+    <title>The Flower Blog</title>
+    <!-- hena hn7ot el style -->
+    <style type="text/css">
+        /*hena el universal selector*/
+        *
+        {
+            margin: 0;
+            padding: 0;
+            /* border: 2px solid red; */
+        }
+        
+        /* hena el element selectors  w displaly block y3ni */
+        header, footer, section, aside, nav, article
+        {
+            display: block;
+        }
+        
+        body
+        {
+            margin: 0 auto;
+            padding: 22px 0;
+            width: 940px;
+            font: 13px/22px Helvetica, Arial, sans-serif;
+            background: #F0F0F0;
+        }
+        
+        h1, h2
+        {
+            font-size: 28px;
+            line-height: 44px;
+            padding: 22px 0;
+        }
+        
+        h3
+        {
+            font-size: 18px;
+            line-height: 22px;
+            padding: 11px 0;
+        }
+        
+        p
+        {
+            padding-bottom: 22px;
+        }
+        
+        
+        
+        /*------------------------------NAVIGATION------------------------------*/
+        
+        nav
+        {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: url("images/nav_background.png");
+        }
+        
+        nav ul
+        {
+            margin: 0 auto;
+            width: 940px;
+            list-style: none;
+        }
+        
+        nav ul li
+        {
+            float: left;
+        }
+        
+        nav ul li a
+        {
+            display: block;
+            margin-right: 20px;
+            width: 140px;
+            font-size: 14px;
+            line-height: 44px;
+            text-align: center;
+            text-decoration: none;
+            color: #777;
+        }
+        
+        nav ul li a:hover
+        {
+            color: #fff;
+        }
+        
+        nav ul li.selected a
+        {
+            color: #fff;
+        }
+        
+        nav ul li.subscribe a
+        {
+            margin-left: 22px;
+            padding-left: 33px;
+            text-align: left;
+            background: url("images/rss.png") left center no-repeat;
+        }
+        
+        
+        
+        /*------------------------------INTRODUCTION------------------------------*/
+        
+        #intro
+        {
+            position: relative;
+            margin-top: 66px;
+            padding: 44px;
+            background: #467612 url("images/intro_background.png") repeat-x;
+            background-size: 100%;
+            border-radius: 22px;
+        }
+        
+        #intro h2, #intro p
+        {
+            position: relative;
+            z-index: 9999;
+            width: 336px;
+        }
+        
+        #intro h2
+        {
+            padding: 0 0 22px 0;
+            font-weight: normal;
+            color: #fff;
+        }
+        
+        #intro p
+        {
+            padding: 0;
+            color: #d9f499;
+        }
+        
+        #intro img
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 653px;
+            height: 100%;
+            border-radius: 22px;
+        }
+        
+        
+        
+        /*------------------------------CONTENT AREA AND SIDEBAR LAYOUT------------------------------*/
+        
+        #content
+    {
+        display:flex;/* dispgamb b3edlay flex y3ni */
+        gap:20px;
+    }
+            
+       #mainContent
+        {
+            flex:2;
+        }
+        
+        aside
+        {
+            flex:1;
+            background: url("images/sidebar_background.png") top left;
+        }
+        
+        
+        
+        /*------------------------------BLOG POST------------------------------*/
+        .blogPost header p, .blogPost header p a
+        {
+            font-size: 14px;
+            font-style: italic;
+            color: #777;
+        }
+        
+        .blogPost header p a:hover
+        {
+            text-decoration: none;
+            color: #000;
+        }
+        
+        
+        .blogPost img
+        {
+            margin: 22px 0;
+            box-shadow: 3px 3px 7px #777;
+        }
+        
+        
+        
+        /*------------------------------COMMENTS------------------------------*/
+        
+        #comments
+        {
+            margin-top: 21px;
+            padding-top: 22px;
+            border-top: 1px solid #d7d7d7;
+        }
+        
+        #comments article
+        {
+            display: table;
+            padding: 22px;
+        }
+        
+        #comments article:nth-child(odd)
+        {
+            padding: 21px;
+            background: #E3E3E3;
+            border: 1px solid #d7d7d7;
+            border-radius: 11px;
+        }
+        
+        #comments article header
+        {
+            display: table-cell;
+            width: 220px;
+            padding-right: 22px;
+        }
+        
+        #comments article header a
+        {
+            display: block;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        #comments article header a:hover
+        {
+            text-decoration: none;
+        }
+        
+        #comments article p
+        {
+            padding: 0;
+        }
+        
+        
+        
+        /*------------------------------COMMENT FORM------------------------------*/
+        form
+        {
+            margin-top: 21px;
+            padding-top: 22px;
+            border-top: 1px solid #d7d7d7;
+        }
+        
+        form p
+        {
+            display: table;
+            margin-bottom: 22px;
+            padding: 0 22px;
+        }
+        
+        form label
+        {
+            display: table-cell;
+            width: 140px;
+            padding-right: 20px;
+            text-align: right;
+            font-weight: bold;
+            vertical-align: top;
+        }
+        
+        form input[type="text"]
+        {
+            display: table-cell;
+            width: 300px;
+            height: 20px;
+            border: 1px solid #d7d7d7;
+        }
+        
+        form textarea
+        {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #d7d7d7;
+        }
+        
+        form input[type="submit"]
+        {
+            margin-left: 162px;
+        }
+        
+        
+        
+        /*------------------------------SIDEBAR------------------------------*/
+        aside section
+        {
+            margin: 22px 0 0 22px;
+            padding: 11px 22px;
+            background: url("images/sidebar_section_background.png") repeat-x;
+            border-radius: 11px;
+        }
+        
+        aside section ul
+        {
+            margin: 0 0 0 22px;
+            list-style: none;
+        }
+        
+        aside section ul li a
+        {
+            display: block;
+            text-decoration: none;
+            color: #000;
+        }
+        
+        aside section ul li a:hover
+        {
+            text-decoration: underline;
+        }
+        
+        
+        
+        /*------------------------------FOOTER------------------------------*/
+        footer
+        {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #222;
+        }
+        
+        footer div
+        {
+            display: table;
+            margin: 0 auto;
+            padding: 44px 0;
+            width: 940px;
+            color: #777;
+        }
+        
+        footer div section
+        {
+            display: table-cell;
+            width: 300px;
+        }
+        
+        footer div #about, footer div #blogroll
+        {
+            padding-right: 20px;
+        }
+        
+        footer h3
+        {
+            color: #FFF;
+        }
+        
+        footer a
+        {
+            color: #999;
+        }
+        
+        footer a:hover
+        {
+            color: #FFF;
+            text-decoration: none;
+        }
+        
+        footer ul
+        {
+            margin: 0 0 0 40px;
+            list-style: square;
+            color: #565656;
+        }
+        
+        footer ul li a
+        {
+            display: block;
+        }
+        /* hena 3shan yb2a responsive wep w ygeeb el 7aga t7et b3ed*/
+        @media(max-width:992px)
+        {
+            #content
+            {
+                flex-direction:column;
+            }
+
+            aside
+            {
+                margin-top:20px;
+            }
+        }
+    </style>
+
+</head>
+<body data-bs-theme="dark"><!--hena el data-bs-theme="dark" da 3shan el bootstrap dark mode-->
+    <header>
+        <h1>
+            The Flower Blog
+        </h1>
+    </header>
+    <!-- hena ast5demna el nav bt3 bost strap w badelto b el kan mowgood-->
+     <!-- navbar-expand-lg m3na mafto7 3ala el shasha el kbera
+      bg-body-tertiary w da loon back ground 
+      sticky-top hena htfdel sabta fo2--> 
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#"><!--# m3naha en mafesh link-->
+            Flower Blog
+        </a>
+        <!-- hena el toggle button  3shan el dark w el light mode-->
+
+        <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"><!--hena el data-bs-target="#menu" da 3shan yft7 el menu lma ados 3la el button-->
+
+            <span class="navbar-toggler-icon"></span><!--hena el span da 3shan yb2a fe 3 line fo2 b3d ma ados 3la el button-->
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto"><!--hena el ms-auto da 3shan margin auto -->
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Archives</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+
+            </ul>
+
+            <button
+                id="themeBtn"
+                class="btn btn-outline-primary ms-3"><!-- el zorar el outline bt3o azr2-->
+
+                🌙<!-- de 3shan lama ados 3leha t2lb-->
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+    <section id="intro">
+        <header>
+            <h2>
+                Do you love flowers as much as we do?</h2>
+        </header>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut.</p>
+        <img src="/images/intro_flower.png" alt="Flower" />
+    </section>
+    
+    <section id="content">
+        <section id="mainContent"><!--role='main'-->
+            <section>
+                <article class="blogPost">
+                    <header>
+                        <h2>
+                            This is the title of a blog post</h2>
+                        <p>
+                            Posted on June 29th 2009 by <a href="#">Mads Kjaer</a> - <a href="#comments">3 comments</a></p>
+                    </header>
+                    <div>
+                        <p>
+						
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu
+                            orci imperdiet nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum
+                            vel, fermentum id tellus. Proin metus odio, ultricies eu pharetra dictum, laoreet
+                            id odio. Curabitur in odio augue. Morbi congue auctor interdum. Phasellus sit amet
+                            metus justo. Phasellus vitae tellus orci, at elementum ipsum. In in quam eget diam
+                            adipiscing condimentum. Maecenas gravida diam vitae nisi convallis vulputate quis
+                            sit amet nibh. Nullam ut velit tortor. Curabitur ut elit id nisl volutpat consectetur
+                            ac ac lorem. Quisque non elit et elit lacinia lobortis nec a velit. Sed ac nisl
+                            sed enim consequat porttitor.</p>
+                        <figure>
+                            <img src="/images/flower.png" alt="Flower" />
+                            <figcaption><i>This is a beautiful flower</i></figcaption>
+                        </figure><br />
+                        <p>
+                            Pellentesque ut sapien arcu, egestas mollis massa. Fusce lectus leo, fringilla at
+                            aliquet sit amet, volutpat non erat. Aenean molestie nibh vitae turpis venenatis
+                            vel accumsan nunc tincidunt. Suspendisse id purus vel felis auctor mattis non ac
+                            erat. Pellentesque sodales venenatis condimentum. Aliquam sit amet nibh nisi, ut
+                            pulvinar est. Sed ullamcorper nisi vel tortor volutpat eleifend. Vestibulum iaculis
+                            ullamcorper diam consectetur sagittis. Quisque vitae mauris ut elit semper condimentum
+                            varius nec nisl. Nulla tempus porttitor dolor ac eleifend. Proin vitae purus lectus,
+                            a hendrerit ipsum. Aliquam mattis lacinia risus in blandit.</p>
+                        <p>
+                            Vivamus vitae nulla dolor. Suspendisse eu lacinia justo. Vestibulum a felis ante,
+                            non aliquam leo. Aliquam eleifend, est viverra semper luctus, metus purus commodo
+                            elit, a elementum nisi lectus vel magna. Praesent faucibus leo sit amet arcu vehicula
+                            sed facilisis eros aliquet. Etiam sodales, enim sit amet mollis vestibulum, ipsum
+                            sapien accumsan lectus, eget ultricies arcu velit ut diam. Aenean fermentum luctus
+                            nulla, eu malesuada urna consequat in. Pellentesque habitant morbi tristique senectus
+                            et netus et malesuada fames ac turpis egestas. Pellentesque massa lacus, sodales
+                            id facilisis ac, lobortis sed arcu. Donec hendrerit fringilla ligula, ac rutrum
+                            nulla bibendum id. Cras sapien ligula, tincidunt eget euismod nec, ultricies eu
+                            augue. Nulla vitae velit sollicitudin magna mattis eleifend. Nam enim justo, vulputate
+                            vitae pretium ac, rutrum at turpis. Aenean id magna neque. Sed rhoncus aliquet viverra.</p>
+                    </div>
+                </article>
+            </section>
+            <section id="comments">
+                <h3>
+                    Comments</h3>
+                    <!-- hena mas7et el comment section el kan 3mlo w ast3melt el accordion -->
+                <div class="accordion" id="commentAccordion">
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+                            <!-- hena el button da 3shan yft7 el comment w y2flha -->
+
+                            <button class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#c1">
+
+                                George Washington
+
+                            </button>
+
+                        </h2>
+
+                        <div id="c1"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#commentAccordion">
+
+                            <div class="accordion-body">
+
+                                Lorem ipsum dolor sit amet.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#c2">
+
+                                Benjamin Franklin
+
+                            </button>
+
+                        </h2>
+
+                        <div id="c2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#commentAccordion">
+
+                            <div class="accordion-body">
+
+                                Lorem ipsum dolor sit amet.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#c3">
+
+                                Barack Obama
+
+                            </button>
+
+                        </h2>
+
+                        <div id="c3"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#commentAccordion">
+
+                            <div class="accordion-body">
+
+                                Lorem ipsum dolor sit amet.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <form>
+
+    <h3>Post a Comment</h3>
+
+    <div class="mb-3"><!--hena el mb-3 da 3shan el margin bottom 3shan yb2a fe space ben el input w el label-->
+
+        <label class="form-label">
+            Name
+        </label>
+
+        <input type="text"
+            class="form-control">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            E-mail
+        </label>
+
+        <input type="email"
+            class="form-control">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Website
+        </label>
+
+        <input type="text"
+            class="form-control">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Comment
+        </label>
+
+        <textarea
+            class="form-control"
+            rows="5"></textarea>
+
+    </div>
+
+    <button class="btn btn-success">
+        Post Comment
+    </button>
+
+</form>
+        </section>
+        <aside>
+            <section>
+                <header>
+                    <h3>
+                        Categories</h3>
+                </header>
+                <ul>
+                    <li><a href="#">Lorem ipsum dolor</a></li>
+                    <li><a href="#">Sit amet consectetur</a></li>
+                    <li><a href="#">Adipisicing elit sed</a></li>
+                    <li><a href="#">Do eiusmod tempor</a></li>
+                    <li><a href="#">Incididunt ut labore</a></li>
+                </ul>
+            </section>
+            <section>
+                <header>
+                    <h3>
+                        Archives</h3>
+                </header>
+                <ul>
+                    <li><a href="#">December 2008</a></li>
+                    <li><a href="#">January 2009</a></li>
+                    <li><a href="#">February 2009</a></li>
+                    <li><a href="#">March 2009</a></li>
+                    <li><a href="#">April 2009</a></li>
+                    <li><a href="#">May 2009</a></li>
+                    <li><a href="#">June 2009</a></li>
+                </ul>
+            </section>
+        </aside>
+    </section>
+
+    <footer>
+        <div>
+            <section id="about">
+                <header>
+                    <h3>
+                        About</h3>
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco <a href="#">laboris nisi ut aliquip</a> ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                    qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+            <section id="blogroll">
+                <header>
+                    <h3>
+                        Blogroll</h3>
+                </header>
+                <ul>
+                    <li><a href="#">NETTUTS+</a></li>
+                    <li><a href="#">FreelanceSwitch</a></li>
+                    <li><a href="#">In The Woods</a></li>
+                    <li><a href="#">Netsetter</a></li>
+                    <li><a href="#">PSDTUTS+</a></li>
+                </ul>
+            </section>
+            <section id="popular">
+                <header>
+                    <h3>
+                        Popular</h3>
+                </header>
+                <ul>
+                    <li><a href="#">This is the title of a blog post</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                    <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+                    <li><a href="#">Duis aute irure dolor</a></li>
+                    <li><a href="#">Excepteur sint occaecat cupidatat</a></li>
+                    <li><a href="#">Reprehenderit in voluptate velit</a></li>
+                    <li><a href="#">Officia deserunt mollit anim id est laborum</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                </ul>
+            </section>
+        </div>
+    </footer>
+
+    <!-- hena el script da 3shan lama ados 3la el button el dark w el light mode ytlb 3la 7asab el mode el mwgood -->
+    <script>
+
+
+    let btn=document.getElementById("themeBtn");
+
+    btn.onclick=function()
+    {
+        if(document.body.getAttribute("data-bs-theme")=="dark")
+        {
+            document.body.setAttribute("data-bs-theme","light");
+            btn.innerHTML="☀️";
+        }
+
+        else
+        {
+            document.body.setAttribute("data-bs-theme","dark");
+            btn.innerHTML="🌙";
+        }
+    }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
